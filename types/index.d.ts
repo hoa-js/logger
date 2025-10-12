@@ -1,9 +1,7 @@
-import type { HoaContext } from 'hoa'
+import type { HoaMiddleware } from 'hoa'
 
 export type PrintFunc = (str: string, ...rest: string[]) => void
 
-export type LoggerMiddleware = (ctx: HoaContext, next: () => Promise<void>) => Promise<void>
-
-export function logger(fn?: PrintFunc): LoggerMiddleware
+export function logger(fn?: PrintFunc): HoaMiddleware
 
 export default logger
